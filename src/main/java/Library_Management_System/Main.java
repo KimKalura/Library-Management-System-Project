@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Book[] bookslist = new Book[100];
+        Book[] bookslist = new Book[10];
         Library library = new Library(bookslist, 0);
-        String[] borrowedBooksCodes = new String[0];
+        String[] borrowedBooksCodes = new String[5];
         Client client = new Client("x", borrowedBooksCodes, 0);
 
         Admin admin = new Admin("y");
@@ -15,7 +15,8 @@ public class Main {
 
         Scanner console = new Scanner(System.in);
         int option;
-        System.out.println("ADMIN or CLIENT:");
+
+        System.out.println("ADMIN(1) or CLIENT(2):");
         int userOption = Integer.parseInt(console.nextLine());
         if (userOption == 1) {
             do {
@@ -33,7 +34,6 @@ public class Main {
             while (option != 6);
         }
     }
-
 
     public static void getBookByTitle(Library library) {
         Scanner console = new Scanner(System.in);
@@ -117,10 +117,11 @@ public class Main {
                 System.out.println("Session ended.");
                 break;
             default:
-                System.out.println("The option does not exist1");
+                System.out.println("The option does not exist!");
         }
     }
 
+    //***
     public static void performSelectedActionForClient(int option, Scanner console, Library library, Client client) {
         switch (option) {
             case 1:
@@ -157,6 +158,7 @@ public class Main {
                 System.out.println("The option does not exist!");
 
         }
+
     }
 
 
